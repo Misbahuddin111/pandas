@@ -41,3 +41,73 @@ print(f"index : {data_series.index}")
 # value 
 print(f"values : {data_series.values}")
 
+import pandas as pd
+
+# Read the CSV into a DataFrame
+subs = pd.read_csv('subs.csv')
+
+# Convert single-column DataFrame to Series
+subs = subs.squeeze()
+print(subs)
+print(type(subs))  # Should show <class 'pandas.core.series.Series'>
+
+
+#with two columns
+vk = pd.read_csv('kohli_ipl.csv', index_col="match_no")
+vks = vk.squeeze()
+print(vks)
+print(type(vks))
+
+movies = pd.read_csv('bollywood.csv',index_col="movie")
+tyop = movies.squeeze()
+print(type(tyop))
+
+
+# series methods 
+# head method
+print(movies.head(3))
+
+# tail method
+print(movies.tail(2))
+
+# sample method  ( generate random items from file)
+
+print(subs.sample())
+
+# values count (The .value_counts() method in Pandas counts unique values in a Series,)
+print(vk.value_counts())
+
+# sort_value
+print(vks.sort_values(ascending=False).head(1).values[0])
+
+
+# sort_index
+print(movies.sort_index(ascending=False))
+
+# series maths method
+# counnt method
+print(subs.count())
+
+#sum 
+print(subs.sum())
+# mean
+subs.mean()
+# median
+print(vk.median())
+
+#mode
+print(movies.mode())
+# std
+print(subs.std())
+# var
+print(vk.var())
+
+# min/max
+
+print(vks.min())
+print(vks.max())
+
+# describe 
+print(subs.describe())
+
+print(subs.plot())
