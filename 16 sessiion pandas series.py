@@ -40,3 +40,4 @@ print(f"index : {data_series.index}")
 
 # value 
 print(f"values : {data_series.values}")
+
