@@ -110,4 +110,74 @@ print(vks.max())
 # describe 
 print(subs.describe())
 
+# series indexing
+num =pd.Series([1,3,4,5,6,7,9,0])
+print(num[0])
+
+
+# series slicing
+
+
+print(vks[4:15])
+
+print(movies[-1:]) # negative indexing
+
+
+# fancy indexing
+print(vks[[20,25,66]])
+
+# editing series
+
+print(data_series)
+name = data_series["name"] = "misbah khan"
+print(data_series)
+semester = data_series[1] = "6th"
+print(data_series)
+
+# what if index does not exist
+
+university = data_series["uni"] = "agricultre university peshawar"
+print(data_series)
+
+# fancy editing 
+
+vks[[3,4,5,2]] = [22,32,43,54]
+print(vks)
+
+# type conversion
+print(data_series)
+print(list(data_series))
+print(dict(data_series))
+
+# membership operator
+
+print('2 States (2014 film)' in movies)
+
+print('Alia Bhatt' in movies.values)
+
+
+
+# looping
+for i in movies.index:
+  print(i)
+
+  # Relational Operators
+
+print(vk >= 50)
+
+#Boolean Indexing on Series
+
+# Find no of 50's and 100's scored by kohli
+vks[vks >= 50].size
+
+# find actors who have done more than 20 movies
+num_movies = movies.value_counts()
+num_movies[num_movies > 20]
+
+# Count number of day when I had more than 200 subs a day
+subs[subs > 200].size
+
+#Plotting Graphs on Series
 print(subs.plot())
+
+print(movies.value_counts().head(20).plot(kind='pie'))
