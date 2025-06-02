@@ -48,48 +48,47 @@ subs = pd.read_csv('subs.csv')
 
 # Convert single-column DataFrame to Series
 subs = subs.squeeze()
-print(subs)
-print(type(subs))  # Should show <class 'pandas.core.series.Series'>
+#print(subs)
+#print(type(subs))  # Should show <class 'pandas.core.series.Series'>
 
 
 #with two columns
 vk = pd.read_csv('kohli_ipl.csv', index_col="match_no")
 vks = vk.squeeze()
-print(vks)
-print(type(vks))
+#print(vks)
+#print(type(vks))
+movies = pd.read_csv('bollywood.csv',index_col="movie").squeeze()
 
-movies = pd.read_csv('bollywood.csv',index_col="movie")
-tyop = movies.squeeze()
-print(type(tyop))
 
 
 # series methods 
 # head method
-print(movies.head(3))
+
+#print(movies.head(3))
 
 # tail method
-print(movies.tail(2))
+#print(movies.tail(2))
 
 # sample method  ( generate random items from file)
 
 print(subs.sample())
 
 # values count (The .value_counts() method in Pandas counts unique values in a Series,)
-print(vk.value_counts())
+#print(vk.value_counts())
 
 # sort_value
 print(vks.sort_values(ascending=False).head(1).values[0])
 
 
 # sort_index
-print(movies.sort_index(ascending=False))
+#print(movies.sort_index(ascending=False))
 
 # series maths method
 # counnt method
-print(subs.count())
+#print(subs.count())
 
 #sum 
-print(subs.sum())
+#print(subs.sum())
 # mean
 subs.mean()
 # median
@@ -142,7 +141,7 @@ print(data_series)
 # fancy editing 
 
 vks[[3,4,5,2]] = [22,32,43,54]
-print(vks)
+#print(vks)
 
 # type conversion
 print(data_series)
@@ -158,8 +157,8 @@ print('Alia Bhatt' in movies.values)
 
 
 # looping
-for i in movies.index:
-  print(i)
+#for i in movies.index:
+ # print(i)
 
   # Relational Operators
 
@@ -168,16 +167,16 @@ print(vk >= 50)
 #Boolean Indexing on Series
 
 # Find no of 50's and 100's scored by kohli
-vks[vks >= 50].size
+#vks[vks >= 50].size
 
 # find actors who have done more than 20 movies
 num_movies = movies.value_counts()
 num_movies[num_movies > 20]
 
 # Count number of day when I had more than 200 subs a day
-subs[subs > 200].size
+#subs[subs > 200].size
 
 #Plotting Graphs on Series
-print(subs.plot())
+#print(subs.plot())
 
-print(movies.value_counts().head(20).plot(kind='pie'))
+#print(movies.value_counts().head(20).plot(kind='pie'))
