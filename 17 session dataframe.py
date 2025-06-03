@@ -26,3 +26,7 @@ movies = pd.read_csv("movies.csv")
 ipl = pd.read_csv("ipl-matches.csv")
 #print(ipl)
 
+# dataFrame methods and attributtes
+# shape
+print(movies.shape)
+print(ipl.shape)
