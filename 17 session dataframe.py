@@ -27,6 +27,38 @@ ipl = pd.read_csv("ipl-matches.csv")
 #print(ipl)
 
 # dataFrame methods and attributtes
-# shape
+
+# shape (shape tell you the no of rows and columns in a file)
 print(movies.shape)
 print(ipl.shape)
+
+# dtypes (data type of every column)
+
+print("data type :", movies.dtypes)
+
+# index ( show the total no of index)
+print("index",ipl.index)
+
+#columns (show the total no of columns )
+print("columns :",movies.columns)
+# values ( show all values in a file)
+print('values :', ipl.values)
+
+# head ( print first five elements)
+
+# tail (print last five elements)
+
+# info (give informTION)
+
+# desceibe ( give mathmatical summary)
+
+# isnull ( show null values in columns)
+
+# duplicated (show duplicated values in rows)
+
+# rename (change the name of heading)
+
+
+
+#  MATH FUNCTIONS
+
